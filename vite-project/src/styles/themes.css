@@ -1,0 +1,132 @@
+/**
+ * Color themes via data-theme on <html>.
+ * Modes: light | dark
+ * Accents: ocean | forest | sunset (keep neutrals, swap primary)
+ *
+ * Theme ids used in JS: light, dark, ocean, forest, sunset
+ * - light / dark = base modes with teal primary
+ * - ocean / forest / sunset = light surfaces + accent primary
+ * - dark-ocean / etc. are not separate; accent themes use light neutrals
+ *   Dark mode variants for accents use the same accent on dark surfaces
+ *   via compound selectors where needed.
+ */
+
+/* ---------- Shared semantic roles (defaults = light + teal) ---------- */
+:root,
+[data-theme="light"] {
+  --color-primary: #0f766e;
+  --color-primary-hover: #0d9488;
+  --color-primary-muted: rgba(15, 118, 110, 0.12);
+  --color-primary-contrast: #ffffff;
+
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #f8fafc;
+
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-danger-contrast: #ffffff;
+  --color-success: #059669;
+
+  --color-table-stripe: #f1f5f9;
+  --color-table-hover: #e2e8f0;
+  --color-header-bg: var(--color-surface);
+  --color-overlay: rgba(15, 23, 42, 0.45);
+  --color-focus-ring: rgba(15, 118, 110, 0.35);
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --color-primary: #2dd4bf;
+  --color-primary-hover: #5eead4;
+  --color-primary-muted: rgba(45, 212, 191, 0.15);
+  --color-primary-contrast: #042f2e;
+
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-elevated: #334155;
+  --color-border: #334155;
+  --color-border-strong: #475569;
+
+  --color-text: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-text-inverse: #0f172a;
+
+  --color-danger: #f87171;
+  --color-danger-hover: #ef4444;
+  --color-danger-contrast: #450a0a;
+  --color-success: #34d399;
+
+  --color-table-stripe: #1e293b;
+  --color-table-hover: #334155;
+  --color-header-bg: #1e293b;
+  --color-overlay: rgba(0, 0, 0, 0.55);
+  --color-focus-ring: rgba(45, 212, 191, 0.4);
+
+  color-scheme: dark;
+}
+
+/* Accent themes (light surfaces + distinct primary) */
+[data-theme="ocean"] {
+  --color-primary: #0369a1;
+  --color-primary-hover: #0284c7;
+  --color-primary-muted: rgba(3, 105, 161, 0.12);
+  --color-primary-contrast: #ffffff;
+  --color-focus-ring: rgba(3, 105, 161, 0.35);
+
+  --color-bg: #f0f9ff;
+  --color-surface: #ffffff;
+  --color-border: #e0f2fe;
+  --color-text: #0c4a6e;
+  --color-text-muted: #0369a1;
+  --color-table-stripe: #f0f9ff;
+  --color-table-hover: #e0f2fe;
+  --color-header-bg: #ffffff;
+
+  color-scheme: light;
+}
+
+[data-theme="forest"] {
+  --color-primary: #166534;
+  --color-primary-hover: #15803d;
+  --color-primary-muted: rgba(22, 101, 52, 0.12);
+  --color-primary-contrast: #ffffff;
+  --color-focus-ring: rgba(22, 101, 52, 0.35);
+
+  --color-bg: #f0fdf4;
+  --color-surface: #ffffff;
+  --color-border: #dcfce7;
+  --color-text: #14532d;
+  --color-text-muted: #3f6212;
+  --color-table-stripe: #f0fdf4;
+  --color-table-hover: #dcfce7;
+  --color-header-bg: #ffffff;
+
+  color-scheme: light;
+}
+
+[data-theme="sunset"] {
+  --color-primary: #c2410c;
+  --color-primary-hover: #ea580c;
+  --color-primary-muted: rgba(194, 65, 12, 0.12);
+  --color-primary-contrast: #ffffff;
+  --color-focus-ring: rgba(194, 65, 12, 0.35);
+
+  --color-bg: #fff7ed;
+  --color-surface: #ffffff;
+  --color-border: #ffedd5;
+  --color-text: #7c2d12;
+  --color-text-muted: #9a3412;
+  --color-table-stripe: #fff7ed;
+  --color-table-hover: #ffedd5;
+  --color-header-bg: #ffffff;
+
+  color-scheme: light;
+}

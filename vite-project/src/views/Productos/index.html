@@ -1,40 +1,31 @@
-<main>
-    <section class="container grid">
-        <!-- <div class="title">
-            <h1>PRODUCTOS</h1>
-        </div> -->
+<section class="container section reveal">
+  <header class="page-header">
+    <div class="page-header__copy">
+      <h1 class="page-header__title" data-i18n="products.title">Productos</h1>
+      <p class="page-header__subtitle" data-i18n="products.subtitle">
+        Administra el catálogo de productos y sus categorías.
+      </p>
+    </div>
+    <div class="page-header__actions">
+      <a href="#crearproductos" class="btn" data-i18n="products.new">Nuevo producto</a>
+    </div>
+  </header>
 
-        <div">
-            <a href="#crearproductos" class="menu__link">Nuevo Producto</a>
-        </div>
-        <div class="tabla">
-            <h2 class="title">Listado de usuarios</h2>
-            <table id="tabla">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th>Categoria_id</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- <tr>
-                  <td>Nombre</td>
-                  <td>Apellidos</td>
-                  <td>Teléfono</td>
-                  <td>Correo</td>
-                  <td>Documento</td>
-                  <td>
-                    <div class="botonera">
-                      <button class="btn btn--samall">Editar</button>
-                      <button class="btn btn--samall btn--danger">Eliminar</button>
-                    </div>
-                  </td>
-                </tr> -->
-                </tbody>
-            </table>
-        </div>
-    </section>
-</main>
+  <div class="tabla card--table reveal">
+    <div class="table-wrap">
+      <table id="tabla">
+        <caption data-i18n="products.listTitle">Listado de productos</caption>
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="products.name">Nombre</th>
+            <th scope="col" data-i18n="products.description">Descripción</th>
+            <th scope="col" data-i18n="products.price">Precio</th>
+            <th scope="col" data-i18n="products.category">Categoría</th>
+            <th scope="col" data-i18n="common.actions">Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>

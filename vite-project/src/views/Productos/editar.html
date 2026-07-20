@@ -1,36 +1,41 @@
-<main>
-    <section class="container grid">
-        <!-- <div class="title">
-            <h1>PRODUCTOS</h1>
-        </div> -->
+<section class="container section reveal">
+  <header class="page-header">
+    <div class="page-header__copy">
+      <h1 class="page-header__title" data-i18n="products.editTitle">Editar producto</h1>
+      <p class="page-header__subtitle" data-i18n="products.subtitle">
+        Administra el catálogo de productos y sus categorías.
+      </p>
+    </div>
+    <div class="page-header__actions">
+      <a href="#productos" class="btn btn--ghost" data-i18n="common.back">Volver</a>
+    </div>
+  </header>
 
-        <div class="formulario">
-            <h2 class="title">Editar Producto</h2>
-            <form id="form" class="form__container" novalidate>
-                <input type="hidden" id="identificador">
-                <div class="form-group">
-                    <label for="nombre" class="form__label">Nombre del producto:</label>
-                    <input type="text" name="nombre" id="nombre" class="form__input" data-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="descripcion" class="form__label">Descripcion:</label>
-                    <input type="text" name="descripcion" id="descripcion" class="form__input"
-                        data-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="precio" class="form__label">Precio:</label>
-                    <input type="number" name="precio" id="precio" class="form__input" data-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="categoria_id" class="form__label">Categoria Id:</label>
-                    <select name="categoria_id" id="categoria_id" class="form__input" data-required="true">
-                        <!-- <option value="">Seleccione una categoria</option> -->
-                    </select>
-                </div>
-                <div class="form-group">
-                    <button class="btn">Validar datos</button>
-                </div>
-            </form>
+  <div class="form-layout">
+    <div class="formulario reveal">
+      <form id="form" class="form__container" novalidate>
+        <input type="hidden" id="identificador" />
+        <div class="form-group">
+          <label for="nombre" class="form__label" data-i18n="products.name">Nombre del producto</label>
+          <input type="text" name="nombre" id="nombre" class="form__input" data-required="true" autocomplete="off" />
         </div>
-    </section>
-</main>
+        <div class="form-group">
+          <label for="descripcion" class="form__label" data-i18n="products.description">Descripción</label>
+          <input type="text" name="descripcion" id="descripcion" class="form__input" data-required="true" />
+        </div>
+        <div class="form-group">
+          <label for="precio" class="form__label" data-i18n="products.price">Precio</label>
+          <input type="number" name="precio" id="precio" class="form__input" data-required="true" min="0" step="0.01" />
+        </div>
+        <div class="form-group">
+          <label for="categoria_id" class="form__label" data-i18n="products.category">Categoría</label>
+          <select name="categoria_id" id="categoria_id" class="form__input" data-required="true"></select>
+        </div>
+        <div class="form__actions">
+          <button type="submit" class="btn btn--block btn--block-mobile" data-i18n="common.save">Guardar</button>
+          <a href="#productos" class="btn btn--ghost btn--block btn--block-mobile" data-i18n="common.cancel">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

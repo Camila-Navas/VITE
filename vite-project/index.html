@@ -1,14 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta name="description" content="Catálogo — gestión de productos y categorías" />
+    <title>Catálogo</title>
+    <!-- Google Fonts: Plus Jakarta Sans (UI) + Source Serif 4 (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Apply saved theme ASAP to avoid flash of wrong theme -->
+    <script>
+      (function () {
+        var key = "catalog-theme";
+        var themes = ["light", "dark", "ocean", "forest", "sunset"];
+        var saved = localStorage.getItem(key);
+        var theme =
+          saved && themes.indexOf(saved) !== -1
+            ? saved
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#app" data-i18n="skip">Saltar al contenido</a>
     <header id="header"></header>
-    <div id="app"></div>
+    <main id="app" class="app-main" tabindex="-1"></main>
+    <footer id="footer"></footer>
     <script type="module" src="/src/app.js"></script>
   </body>
 </html>
